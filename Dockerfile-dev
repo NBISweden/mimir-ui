@@ -1,0 +1,12 @@
+FROM node:18-alpine3.16
+
+WORKDIR /home/node
+RUN mkdir app
+COPY package.json yarn.lock ./
+RUN yarn install && yarn cache clean
+WORKDIR /home/node/app
+ENV PATH=/home/node/node_modules/.bin:$PATH
+
+ARG SERVER_DOMAIN='http://localhost:4567'
+
+ENV SERVER_DOMAIN ${SERVER_DOMAIN}

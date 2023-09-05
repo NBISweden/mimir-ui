@@ -2,6 +2,15 @@
 const appName = process.env.NUXT_PUBLIC_APP_NAME ?? 'ChatGPT UI'
 export default defineNuxtConfig({
     debug: process.env.NODE_ENV !== 'production',
+    vite: {
+        server: {
+            hmr: {
+                protocol: 'ws',
+                clientPort: 4567,
+                path: 'hmr/',
+            }
+        }
+    },
     ssr: process.env.SSR !== 'false',
     app: {
         head: {
