@@ -202,6 +202,7 @@ onNuxtReady(() => {
   currentModel.value = getCurrentModel()
 })
 
+import Footer from '~/components/Footer.vue'
 </script>
 
 <template>
@@ -330,6 +331,7 @@ onNuxtReady(() => {
 
       </v-toolbar>
     </div>
+    <Footer />
   </v-footer>
   <v-snackbar
       v-model="snackbar"
