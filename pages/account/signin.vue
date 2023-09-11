@@ -15,8 +15,8 @@
               class="mt-15"
               elevation="0"
           >
-            <div class="text-center text-h4">{{$t('signIn')}}</div>
-            <v-card-text>
+            <div class="text-center text-h4">{{'Mimir ' + $t('signIn')}}</div>
+             <v-card-text>
               <v-form ref="signInForm">
                 <v-text-field
                     v-model="formData.username"
@@ -62,6 +62,7 @@
         </v-col>
       </v-row>
     </v-container>
+    <Footer />
   </v-card>
 
 </template>
@@ -115,5 +116,6 @@ const submit = async () => {
     }
   }
 }
+import Footer from '~/components/Footer.vue';
 
 </script>
