@@ -15,7 +15,7 @@
               class="mt-15"
               elevation="0"
           >
-            <div class="text-center text-h4">{{'Mimir ' + $t('signIn')}}</div>
+            <div class="text-center text-h4">{{$t('signIn')}}</div>
              <v-card-text>
               <v-form ref="signInForm">
                 <v-text-field
