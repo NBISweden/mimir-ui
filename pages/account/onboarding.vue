@@ -11,7 +11,7 @@ const user = useUser()
 const resendEmail = async () => {
   errorMsg.value = null
   sending.value = true
-  const { data, error } = await useFetch('/api/account/registration/resend-email/', {
+  const { data, error } = await useFetch('/api/account/resend-email/', {
     method: 'POST',
   })
   if (error.value) {
