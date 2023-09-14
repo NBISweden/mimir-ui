@@ -27,7 +27,8 @@ const formRules = ref({
   ],
   email: [
     v => !!v || $i18n.t('Please enter your e-mail address'),
-    v => /.+@.+\..+/.test(v) || $i18n.t('E-mail address must be valid')
+    v => /.+@.+\..+/.test(v) || $i18n.t('E-mail address must be valid'),
+    v=> v.endsWith('@nbis.se') || $i18n.t('E-mail address must end with @nbis.se')
   ],
   password1: [
     v => !!v || $i18n.t('Please enter your password'),
@@ -124,7 +125,7 @@ const handleFieldUpdate = (field) => {
                     v-model="formData.email"
                     :rules="formRules.email"
                     :error-messages="fieldErrors.email"
-                    :label="$t('email')"
+                    :label="$t('email') + '@nbis.se'"
                     variant="underlined"
                     @update:modelValue="handleFieldUpdate('email')"
                     clearable
