@@ -90,6 +90,8 @@ const submit = async () => {
 const handleFieldUpdate = (field) => {
   fieldErrors.value[field] = ''
 }
+
+const passwordInputType = ref('password')
 </script>
 
 <template>
@@ -139,6 +141,9 @@ const handleFieldUpdate = (field) => {
                     variant="underlined"
                     @update:modelValue="handleFieldUpdate('password1')"
                     clearable
+                    :type="passwordInputType"
+                    :append-inner-icon="passwordInputType === 'password' ? 'visibility' : 'visibility_off'"
+                    @click:append-inner="passwordInputType = passwordInputType === 'password' ? 'text' : 'password'"
                 ></v-text-field>
 
                 <v-text-field
@@ -149,6 +154,9 @@ const handleFieldUpdate = (field) => {
                     variant="underlined"
                     @update:modelValue="handleFieldUpdate('password2')"
                     clearable
+                    :type="passwordInputType"
+                    :append-inner-icon="passwordInputType === 'password' ? 'visibility' : 'visibility_off'"
+                    @click:append-inner="passwordInputType = passwordInputType === 'password' ? 'text' : 'password'"
                 ></v-text-field>
 
 <!--                <v-text-field-->

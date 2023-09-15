@@ -11,7 +11,7 @@ const user = useUser()
 const resendEmail = async () => {
   errorMsg.value = null
   sending.value = true
-  const { data, error } = await useFetch('/api/account/registration/resend-email/', {
+  const { data, error } = await useFetch('/api/account/resend-email/', {
     method: 'POST',
   })
   if (error.value) {
@@ -55,8 +55,7 @@ onNuxtReady(() => {
               <div v-else>
                 <h2 class="text-h4">Verify your email</h2>
                 <p class="mt-5">
-                  We've sent a verification email to <strong>{{ user.email }}</strong>. <br>
-                  Please check your inbox and click the link to verify your email address.
+                  We've sent you a verification email. Please check your inbox to verify your account.
                 </p>
                 <p v-if="errorMsg"
                    class="text-red"
