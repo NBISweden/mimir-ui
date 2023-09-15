@@ -1,3 +1,4 @@
+import { type } from '../../.nuxt/types/imports';
 <script setup>
 definePageMeta({
   middleware: ["auth"]
@@ -117,6 +118,9 @@ const successDialog = ref(false)
                     :label="$t('newPassword')"
                     variant="underlined"
                     clearable
+                    :type="passwordInputType"
+                    :append-inner-icon="passwordInputType === 'password' ? 'visibility' : 'visibility_off'"
+                    @click:append-inner="passwordInputType = passwordInputType === 'password' ? 'text' : 'password'"
                 ></v-text-field>
                 <v-text-field
                     v-model="formData.new_password2"
@@ -126,6 +130,9 @@ const successDialog = ref(false)
                     :label="$t('confirmPassword')"
                     variant="underlined"
                     clearable
+                    :type="passwordInputType"
+                    :append-inner-icon="passwordInputType === 'password' ? 'visibility' : 'visibility_off'"
+                    @click:append-inner="passwordInputType = passwordInputType === 'password' ? 'text' : 'password'"
                 ></v-text-field>
               </v-form>
 
