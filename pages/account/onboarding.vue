@@ -64,7 +64,7 @@ onNuxtReady(() => {
                 <p v-if="errorMsg"
                    class="text-red"
                 >{{ errorMsg }}</p>
-                <h3 class="text-h3">Resend verification email</h3>
+                <h3 class="text-h5 mt-5">Resend verification email</h3>
                 <p class="mt-5">
                   Please type your email address so we can send you a new verification email:
                 </p>
