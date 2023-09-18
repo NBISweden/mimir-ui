@@ -59,8 +59,6 @@ const submit = async () => {
       body: JSON.stringify(formData.value)
     })
 
-    console.log(error.value)
-
     if (error.value) {
       if (error.value.statusCode === 400) {
         for (const key in formData.value) {
@@ -79,7 +77,7 @@ const submit = async () => {
         }
       }
     } else {
-      setUser(data.value.user)
+      setUser(data.value.user ? data.value.user : {"username": "unverified-user"} )
       navigateTo('/account/onboarding?email_verification_required='+data.value.email_verification_required)
     }
 

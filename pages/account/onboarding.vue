@@ -13,6 +13,10 @@ const resendEmail = async () => {
   sending.value = true
   const { data, error } = await useFetch('/api/account/resend-email/', {
     method: 'POST',
+    Headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email: user.value.email
+    })
   })
   if (error.value) {
     errorMsg.value = 'Something went wrong. Please try again later.'
@@ -60,9 +64,19 @@ onNuxtReady(() => {
                 <p v-if="errorMsg"
                    class="text-red"
                 >{{ errorMsg }}</p>
+                <h3 class="text-h3">Resend verification email</h3>
+                <p class="mt-5">
+                  Please type your email address so we can send you a new verification email:
+                </p>
+                <v-text-field
+                    v-model="user.email"
+                    label="Email"
+                    type="email"
+                    class="mt-5"
+                ></v-text-field>
                 <v-btn
                     variant="text"
-                    class="mt-5"
+                    class="mt-3"
                     color="primary"
                     :loading="sending"
                     @click="resendEmail"
