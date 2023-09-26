@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const appName = process.env.NUXT_PUBLIC_APP_NAME ?? 'ChatGPT UI'
+const appName = process.env.NUXT_PUBLIC_APP_NAME ?? 'Mimir'
 export default defineNuxtConfig({
     debug: process.env.NODE_ENV !== 'production',
     vite: {
@@ -42,7 +42,7 @@ export default defineNuxtConfig({
         manifest: {
             name: appName,
             short_name: appName,
-            description: 'A ChatGPT web Client'
+            description: 'The NBIS CahtGPT web client'
         },
         workbox: {
             enabled: process.env.DEBUT_PWA === 'true',
