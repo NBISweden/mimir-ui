@@ -7,8 +7,8 @@ import {
   } from './configs/index.js'
 
 export default defineUserConfig({
-  title: 'ChatGPT UI',
-  description: 'A ChatGPT web client',
+  title: 'Mimir',
+  description: 'The NBIS ChatGPT web client',
   base: '/chatgpt-ui/',
   locales: {
     // 键名是该语言所属的子路径
