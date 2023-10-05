@@ -42,14 +42,14 @@ export default defineNuxtConfig({
         manifest: {
             name: appName,
             short_name: appName,
-            description: 'The NBIS CahtGPT web client'
+            description: 'The NBIS ChatGPT web client'
         },
         workbox: {
             enabled: process.env.DEBUT_PWA === 'true',
         },
         meta: {
             name: appName,
-            description: 'The NBIS CahtGPT web client',
+            description: 'The NBIS ChatGPT web client',
             author: 'NBIS'
         },
     },
