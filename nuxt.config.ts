@@ -46,7 +46,12 @@ export default defineNuxtConfig({
         },
         workbox: {
             enabled: process.env.DEBUT_PWA === 'true',
-        }
+        },
+        meta: {
+            name: appName,
+            description: 'The NBIS CahtGPT web client',
+            author: 'NBIS'
+        },
     },
     i18n: {
         strategy: 'no_prefix',
